@@ -5,7 +5,7 @@
 
 node{
     def bucket = 'rsdemo1'
-    def region = 'eu-west-1'
+    def region = 'eu-west-2'
     def function = 'timeFunc'
 
     stage('Clone'){
@@ -54,7 +54,7 @@ node{
     }
 
     stage('Post Deployment Check'){
-        // invoke lambda function and test response
+        // invoke lambda function
         withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'awscreds', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
             step([
                 $class: 'LambdaInvokeBuildStep', 
