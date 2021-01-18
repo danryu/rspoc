@@ -5,7 +5,7 @@
 
 node{
     def bucket = 'rsdemo1'
-    def region = 'eu-west-2'
+    def region = 'eu-west-1'
     def function = 'timeFunc'
 
     stage('Clone'){
